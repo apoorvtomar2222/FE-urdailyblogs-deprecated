@@ -1,0 +1,25 @@
+.feed
+{
+    border:1px solid grey;
+    box-shadow: 1px 1px 1px #f1f1f1;
+    margin: 10px;
+    padding: 10px;
+    width: 18%!important;
+}
+.imgFeed
+{
+    width: 100%;
+}
+
+.imgFeedOne
+{
+    width:20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+/* navbar style */
+.navbar-brand1
+{
+    color: white;
+}
