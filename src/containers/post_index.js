@@ -7,17 +7,22 @@ import { Link } from 'react-router';
 
 
 class PostsIndex extends Component{
+  
     componentWillMount(){
         this.props.fetchPosts();
     }
+  
 
     renderPosts(){
-        //
+        var divStyle = {
+            color: 'red',
+          };
         console.log("This is prop article",this.props.article);
         return this.props.posts.map((post) =>{
             return (
                 <div className="feed col-xs-3" 
-                    key={post._id} 
+                    key={post._id}
+                    style={{backgroundImage:`url(${post.image})`}}
                     onClick={()=> this.props.fetchArticle(post.articleId)}>
                     <Link to={`/articles/${post.articleId}`}>
                      <strong>
@@ -25,7 +30,7 @@ class PostsIndex extends Component{
                             {post.authorName}
                     </strong>
                     <br/>
-                    <img className="imgFeed" src={post.image}/>
+                    {/* <img className="imgFeed" src=/> */}
                     <br/>
                     <strong>{post.id}  {post.title}</strong>
                     </Link>
@@ -34,7 +39,8 @@ class PostsIndex extends Component{
         });
 
     }
-    render(){
+    render(){   
+
         return(
             <div>
                <div className=" " >

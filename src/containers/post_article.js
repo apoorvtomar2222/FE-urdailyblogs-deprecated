@@ -11,13 +11,11 @@ class PostArticle extends Component{
             console.log("Content on article page is ",content);
             return(
                 <div className="container">
-                    <div>
+                    <div className="articleTitle">
                         {content.title}
-
                     </div>
-                    <div>
+                    <div className="articleImage">
                         <img src={content.headerImage}/>
-                        
                     </div>
                     <div>
                         {content.content}
@@ -27,7 +25,13 @@ class PostArticle extends Component{
         }
         else{
             return(
-            <div>Loading.............</div>
+                <div className="spinner">
+                <div className="rect1"></div>
+                <div className="rect2"></div>
+                <div className="rect3"></div>
+                <div className="rect4"></div>
+                <div className="rect5"></div>
+              </div>
             )
         }
         
