@@ -17,8 +17,8 @@ class PostArticle extends Component{
                     <div className="articleImage">
                         <img src={content.headerImage}/>
                     </div>
-                    <div>
-                        {content.content}
+                    <div dangerouslySetInnerHTML={{ __html:content.content  }}>
+                        
                     </div>
                 </div>
             )
