@@ -1,9 +1,16 @@
 import React,{ Component}  from 'react';
 import {connect} from 'react-redux';
+import {fetchArticle} from '../actions/index';
+import {bindActionCreators} from 'redux';
 
 class PostArticle extends Component{
     
-    
+    componentWillMount(){
+        console.log('Param',this.props.params.id);
+        this.props.fetchArticle(this.props.params.id);
+    }
+
+
     render(){
         
         if(this.props.article[0 ]){
@@ -46,4 +53,12 @@ function mapStateToProps(state){
             }
 }
 
-export default connect(mapStateToProps)(PostArticle);
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+                    fetchArticle:fetchArticle,
+                    
+                },dispatch);
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(PostArticle);

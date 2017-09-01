@@ -9,6 +9,7 @@ import { Link } from 'react-router';
 class PostsIndex extends Component{
   
     componentWillMount(){
+        
         this.props.fetchPosts();
     }
   
@@ -32,7 +33,9 @@ class PostsIndex extends Component{
                     <br/>
                     {/* <img className="imgFeed" src=/> */}
                     <br/>
-                    <strong>{post.id}  {post.title}</strong>
+                    <div className="feedTitle">
+                        {post.title}
+                    </div>
                     </Link>
                 </div> 
             );
@@ -41,14 +44,22 @@ class PostsIndex extends Component{
     }
     render(){   
 
-        return(
-            <div>
-               <div className=" " >
-                   {this.renderPosts()}
+        if(!this.props.posts){
+            return (
+                <div><p>Loading</p></div>
+            )
+        }
+
+        if(this.props.posts){
+            return(
+                <div>
+                   <div className=" " >
+                       {this.renderPosts()}
+                    </div>
+                    
                 </div>
-                
-            </div>
-        );
+            );
+        }
     }
 }   
 
