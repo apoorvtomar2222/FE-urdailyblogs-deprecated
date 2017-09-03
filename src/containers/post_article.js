@@ -6,14 +6,14 @@ import {bindActionCreators} from 'redux';
 class PostArticle extends Component{
     
     componentWillMount(){
-        console.log('Param',this.props.params.id);
+        console.log('Param',this.props);
         this.props.fetchArticle(this.props.params.id);
     }
 
 
     render(){
         
-        if(this.props.article[0 ]){
+        if(this.props.article[0]){
             var content = this.props.article[0];
             console.log("Content on article page is ",content);
             return(
@@ -56,7 +56,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
                     fetchArticle:fetchArticle,
-                    
+                            
                 },dispatch);
 }
 

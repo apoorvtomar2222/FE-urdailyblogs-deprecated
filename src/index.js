@@ -7,6 +7,7 @@ import {Router,browserHistory} from 'react-router';
 import reducers from './reducers';
 import routes from './routes';
 import promise from 'redux-promise';
+import Root from './containers/meta_tags.js';
 
 
 const createStoreWithMiddleware = applyMiddleware(
@@ -18,3 +19,7 @@ ReactDOM.render(
     <Router history={browserHistory} routes={routes}/>
   </Provider>
   , document.querySelector('.containerMain'));
+
+  
+ReactDOM.render(<Root store={createStoreWithMiddleware(reducers)} />, document.querySelector('.meta'));
+  
