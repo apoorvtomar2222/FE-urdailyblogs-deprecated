@@ -21,7 +21,8 @@ class PostsIndex extends Component{
         console.log("This is prop article",this.props.article);
         return this.props.posts.map((post) =>{
             return (
-                <div className="feed col-xs-3" 
+                
+                <div className="feed col-md-3" 
                     key={post._id}
                     style={{backgroundImage:`url(${post.image})`}}
                     onClick={()=> this.props.fetchArticle(post.articleId)}>
@@ -37,7 +38,8 @@ class PostsIndex extends Component{
                         {post.title}
                     </div>
                     </Link>
-                </div> 
+                </div>
+                
             );
         });
 

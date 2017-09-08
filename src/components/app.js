@@ -6,7 +6,6 @@ export default class App extends Component {
       <div>
         <Navigations />
         {this.props.children}
-
       </div>
     );
   }
