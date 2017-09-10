@@ -23,8 +23,7 @@ class PostsIndex extends Component{
             return (
                 
                 <div className="feed col-md-3" 
-                    key={post._id}
-                    style={{backgroundImage:`url(${post.image})`}}
+                    key={post._id}        
                     onClick={()=> this.props.fetchArticle(post.articleId)}>
                     <Link to={`/articles/${post.articleId}`}>
                      <strong>
@@ -32,7 +31,7 @@ class PostsIndex extends Component{
                             {post.authorName}
                     </strong>
                     <br/>
-                    {/* <img className="imgFeed" src=/> */}
+                <img className="imgFeed" src={post.image}/>
                     <br/>
                     <div className="feedTitle">
                         {post.title}
@@ -55,7 +54,7 @@ class PostsIndex extends Component{
         if(this.props.posts){
             return(
                 <div>
-                   <div className=" " >
+                   <div className="feedPage" >
                        {this.renderPosts()}
                     </div>
                     
